@@ -8,7 +8,7 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 50px;
-    height: 75vh;
+    height: 70vh;
     min-height: 500px;
     padding: 10px;
 }
@@ -21,6 +21,7 @@ button {
     border: 2px #272b33 solid;
     border-radius: 5px;
     padding: 20px;
+    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
 }
 
 button:hover {
@@ -29,27 +30,34 @@ button:hover {
 
 .calculator {
     background-color: #272931;
+    color: white;
     border: 2px #272931 solid;
     border-radius: 10px;
     width: 400px;
+}
+
+.displayCurrent {
+    font-size: 40px;
+    text-align: right;
+    padding: 20px 20px;
 }
 
 .buttons {
     background-color: #292d36;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
+    grid-gap: 20px;
     border: 2px #292d36 solid;
     border-radius: 10px;
     padding: 30px;
 }
 
 .delBtn {
-    color: #26ccaf;
+    color: #26e9c6;
     grid-column: span 2;
 }
 
 .operatorBtn {
-    color: #a65154;
+    color: #d37474;
 }
 
