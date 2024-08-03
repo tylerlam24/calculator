@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background-color: #f2f1f1;
+    background-color: #f4f2f3;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,13 +15,13 @@ body {
 
 button {
     font-family: 'Roboto', sans-serif;
-    font-size: 20px;
+    font-size: 22px;
     background-color: #272b33;
     color: white;
     border: 2px #272b33 solid;
     border-radius: 5px;
     padding: 20px;
-    /* box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); */
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
 
 button:hover {
@@ -32,14 +32,16 @@ button:hover {
     background-color: #272931;
     color: white;
     border: 2px #272931 solid;
-    border-radius: 10px;
+    border-radius: 20px;
     width: 400px;
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
 }
 
 .displayCurrent {
     font-size: 40px;
     text-align: right;
     padding: 20px 20px;
+    word-wrap: break-word
 }
 
 .buttons {
@@ -48,16 +50,19 @@ button:hover {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
     border: 2px #292d36 solid;
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 30px;
 }
 
 .delBtn {
-    color: #26e9c6;
-    grid-column: span 2;
+    color: #00ffd0;
 }
 
 .operatorBtn {
-    color: #d37474;
+    color: #f08585;
+}
+
+#equalsBtn {
+    grid-column: span 2;
 }
 
