@@ -1,16 +1,20 @@
 let firstOperand = '';
 let secondOperand = '';
 let operator = null;
+let previousEq = null;
 let resetScreen = true;
 
 const currentScreen = document.querySelector('.displayCurrent');
+const previousScreen = document.querySelector('.displayPast');
 const numBtns = document.querySelectorAll('.numBtn');
 const operatorBtns = document.querySelectorAll('.operatorBtn');
+const equalsBtn = document.querySelector('#equalsBtn');
 const clearBtn = document.querySelector('#clearBtn');
 const backBtn = document.querySelector('#backBtn');
 
 numBtns.forEach(button => button.addEventListener('click', () => appendNumber(button.textContent)));
 operatorBtns.forEach(button => button.addEventListener('click', () => appendOperator(button.textContent)));
+equalsBtn.addEventListener('click', () => evaluate());
 clearBtn.addEventListener('click', () => clear());
 backBtn.addEventListener('click', () => back());
 
@@ -20,14 +24,16 @@ function appendNumber(num) {
 }
 
 function appendOperator(op) {
-    if (operator !== null) evaluate();
-    firstOperand = currentScreen.textContent
-    operator = op;
     currentScreen.textContent += op;
 }
 
 function evaluate() {
-
+    previousEq = currentScreen.textContent.toString();
+    firstOperand = Number(currentScreen.textContent[0]);
+    operator = currentScreen.textContent[1];
+    secondOperand = Number(currentScreen.textContent[2]);
+    currentScreen.textContent = operate(firstOperand, secondOperand, operator);
+    previousScreen.textContent = previousEq;
 }
 
 function clear() {
@@ -35,6 +41,7 @@ function clear() {
     secondOperand = '';
     operator = '';
     currentScreen.textContent = '0';
+    previousScreen.textContent = '';
 }
 
 function back() {
